@@ -96,10 +96,53 @@ input{
     border:1px solid #ddd;
     border-radius:10px;
     font-size:16px;
+    font-family:'Inter',sans-serif;
 }
 
 .form-row.full-width{
     margin-bottom:15px;
+}
+
+.smoker-group{
+    margin-bottom:15px;
+}
+
+.smoker-label{
+    font-size:14px;
+    font-weight:600;
+    color:#14532d;
+    margin-bottom:10px;
+    display:block;
+}
+
+.smoker-options{
+    display:flex;
+    gap:15px;
+}
+
+.smoker-btn{
+    flex:1;
+    padding:16px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    background:#fff;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    color:#355d3e;
+    transition:all 0.3s ease;
+    font-family:'Inter',sans-serif;
+}
+
+.smoker-btn:hover{
+    border-color:#28a745;
+    background:#f9fdf9;
+}
+
+.smoker-btn.active{
+    border-color:#28a745;
+    background:#28a745;
+    color:white;
 }
 
 .btn{
@@ -278,6 +321,14 @@ Life insurance made simple, so you can focus on what matters most.
 <input type="email" placeholder="Email Address">
 </div>
 
+<div class="smoker-group">
+<label class="smoker-label">Smoker Status</label>
+<div class="smoker-options">
+<button class="smoker-btn" onclick="selectSmoker(this, 'yes')">✓ Yes</button>
+<button class="smoker-btn" onclick="selectSmoker(this, 'no')">✕ No</button>
+</div>
+</div>
+
 <button class="btn">Get My Quote</button>
 
 <div class="secure">
@@ -417,6 +468,15 @@ Ease the financial burden on loved ones.
 <footer class="footer">
 © 2025 FJJT. All Rights Reserved.
 </footer>
+
+<script>
+function selectSmoker(button, value) {
+  const parent = button.parentElement;
+  const buttons = parent.querySelectorAll('.smoker-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+}
+</script>
 
 </body>
 </html>
