@@ -98,6 +98,10 @@ input{
     font-size:16px;
 }
 
+.form-row.full-width{
+    margin-bottom:15px;
+}
+
 .btn{
     width:100%;
     background:#28a745;
@@ -120,11 +124,13 @@ input{
 .right{
     flex:1;
     text-align:center;
+    min-width:300px;
 }
 
 .right img{
     max-width:100%;
     border-radius:20px;
+    height:auto;
 }
 
 .section{
@@ -215,6 +221,14 @@ input{
     .help-grid{
         grid-template-columns:1fr;
     }
+
+    .hero-content{
+        flex-direction:column;
+    }
+
+    .right{
+        order:-1;
+    }
 }
 </style>
 </head>
@@ -252,14 +266,13 @@ Life insurance made simple, so you can focus on what matters most.
 <input type="text" placeholder="Last Name">
 </div>
 
-<input type="email" placeholder="Date of Birth">
+<input type="date" placeholder="Date of Birth">
 
-<br><br>
-
-<input type="text" placeholder="Mobile Number">
+<div class="form-row full-width">
+<input type="tel" placeholder="Mobile Number">
+</div>
 
 <input type="email" placeholder="Email Address">
-
 
 <button class="btn">Get My Quote</button>
 
@@ -269,6 +282,10 @@ Life insurance made simple, so you can focus on what matters most.
 
 </div>
 
+</div>
+
+<div class="right">
+<img src="https://images.unsplash.com/photo-1552684528-1f2170e6999c?w=500&h=500&fit=crop" alt="Family protection - Life insurance">
 </div>
 
 </div>
