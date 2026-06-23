@@ -27,15 +27,17 @@ body{
 }
 
 .hero{
-    background:linear-gradient(135deg,#e8f6e7,#d7f0d6);
-    padding:40px 0 80px;
+    background:linear-gradient(135deg,#e8f6e7 0%,#d7f0d6 100%);
+    padding:60px 0 80px;
+    overflow:hidden;
+    position:relative;
 }
 
 .header{
     display:flex;
     align-items:center;
     justify-content:flex-start;
-    margin-bottom:40px;
+    margin-bottom:60px;
 }
 
 .logo{
@@ -48,8 +50,10 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:50px;
+    gap:60px;
     flex-wrap:wrap;
+    position:relative;
+    z-index:2;
 }
 
 .left{
@@ -58,30 +62,30 @@ body{
 }
 
 .left h1{
-    font-size:48px;
-    line-height:1.2;
-    font-weight:700;
+    font-size:52px;
+    line-height:1.15;
+    font-weight:800;
     color:#14532d;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .left p{
     font-size:18px;
-    color:#555;
-    margin-bottom:35px;
-    line-height:1.6;
+    color:#4a4a4a;
+    margin-bottom:40px;
+    line-height:1.7;
 }
 
 .quote-box{
     background:#fff;
-    padding:30px;
-    border-radius:15px;
-    max-width:450px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    padding:40px;
+    border-radius:16px;
+    max-width:420px;
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
 }
 
 .quote-box h2{
-    margin-bottom:20px;
+    margin-bottom:25px;
     color:#14532d;
     font-size:20px;
     font-weight:700;
@@ -90,7 +94,7 @@ body{
 .form-row{
     display:flex;
     gap:15px;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .form-row.single {
@@ -103,13 +107,14 @@ body{
 
 input {
     width:100%;
-    padding:14px;
-    border:1px solid #ddd;
+    padding:14px 16px;
+    border:1px solid #e0e0e0;
     border-radius:8px;
     font-size:14px;
     font-family:'Inter',sans-serif;
     color:#143d1e;
     font-weight: 400;
+    background:#fff;
 }
 
 input::placeholder {
@@ -121,24 +126,15 @@ input[type="date"] {
     font-weight: 400;
 }
 
-input[type="date"]::before {
-    content: attr(placeholder);
-    font-weight: 400;
-}
-
-.form-row.full-width{
-    margin-bottom:15px;
-}
-
 .smoker-group{
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .smoker-label{
     font-size:13px;
     font-weight:600;
     color:#14532d;
-    margin-bottom:8px;
+    margin-bottom:10px;
     display:block;
 }
 
@@ -149,21 +145,21 @@ input[type="date"]::before {
 
 .smoker-btn{
     flex:1;
-    padding:12px;
-    border:2px solid #ddd;
+    padding:12px 16px;
+    border:2px solid #e0e0e0;
     border-radius:8px;
     background:#fff;
     cursor:pointer;
     font-size:14px;
     font-weight:600;
-    color:#355d3e;
+    color:#4a4a4a;
     transition:all 0.3s ease;
     font-family:'Inter',sans-serif;
 }
 
 .smoker-btn:hover{
     border-color:#28a745;
-    background:#f9fdf9;
+    background:#f8fdf8;
 }
 
 .smoker-btn.active{
@@ -182,7 +178,8 @@ input[type="date"]::before {
     font-size:16px;
     font-weight:700;
     cursor:pointer;
-    margin-top:10px;
+    margin-top:8px;
+    transition:background 0.3s ease;
 }
 
 .btn:hover {
@@ -191,40 +188,53 @@ input[type="date"]::before {
 
 .secure{
     text-align:center;
-    margin-top:15px;
-    color:#555;
-    font-size:13px;
+    margin-top:16px;
+    color:#666;
+    font-size:12px;
 }
 
 .right{
     flex:1;
     text-align:center;
-    min-width:300px;
+    min-width:280px;
+    position:relative;
+}
+
+.right::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 120%;
+    height: 150%;
+    background: radial-gradient(ellipse at center bottom, rgba(216, 240, 215, 0.4) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .right img{
     max-width:100%;
     height:auto;
-    border-radius:15px;
-    object-fit:cover;
+    object-fit:contain;
+    object-position:center bottom;
 }
 
 .section{
-    padding:80px 0;
+    padding:100px 0;
 }
 
 .section h2{
     text-align:center;
     font-size:42px;
-    margin-bottom:60px;
+    margin-bottom:70px;
     color:#14532d;
-    font-weight:700;
+    font-weight:800;
 }
 
 .features{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:40px;
+    gap:50px;
 }
 
 .feature{
@@ -232,56 +242,59 @@ input[type="date"]::before {
 }
 
 .icon{
-    width:80px;
-    height:80px;
-    border:2px solid #cce7cb;
+    width:90px;
+    height:90px;
+    border:2px solid #d4e7d2;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:0 auto 20px;
-    font-size:32px;
+    margin:0 auto 25px;
+    font-size:36px;
     line-height:1;
+    background:#f8fdf8;
 }
 
 .feature h3{
     margin-bottom:15px;
-    font-size:24px;
+    font-size:22px;
     font-weight:700;
+    color:#14532d;
 }
 
 .feature p{
-    color:#555;
-    line-height:1.7;
+    color:#666;
+    line-height:1.8;
     font-size:15px;
 }
 
 .help-section{
-    background:#f3faf3;
+    background:#f5faf5;
 }
 
 .help-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:30px;
+    gap:40px;
     text-align:center;
 }
 
 .help-item h3{
     margin:15px 0;
-    font-size:20px;
+    font-size:18px;
     font-weight:700;
+    color:#14532d;
 }
 
 .help-item p{
-    color:#555;
+    color:#666;
     line-height:1.7;
     font-size:14px;
 }
 
 .footer{
     text-align:center;
-    padding:30px;
+    padding:40px;
     background:#14532d;
     color:white;
 }
@@ -289,7 +302,7 @@ input[type="date"]::before {
 @media(max-width:900px){
 
     .left h1{
-        font-size:36px;
+        font-size:40px;
     }
 
     .left p{
@@ -298,18 +311,35 @@ input[type="date"]::before {
 
     .features{
         grid-template-columns:1fr;
+        gap:30px;
     }
 
     .help-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
     }
 
     .hero-content{
         flex-direction:column;
+        gap:40px;
     }
 
     .right{
         order:-1;
+    }
+
+    .right::before {
+        width: 100%;
+    }
+}
+
+@media(max-width:600px){
+    .help-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quote-box{
+        padding:25px;
     }
 }
 </style>
@@ -377,9 +407,7 @@ Life insurance made simple, so you can focus on what matters most.
 </div>
 
 <div class="right">
-<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=600&fit=crop" alt="Professional business team - Insurance company">
-</div>
-
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=faces" alt="Happy family - Life insurance protection">
 </div>
 
 </div>
