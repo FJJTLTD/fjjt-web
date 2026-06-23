@@ -36,18 +36,12 @@ body{
     align-items:center;
     justify-content:flex-start;
     margin-bottom:40px;
-    gap:8px;
 }
 
 .logo{
     font-size:28px;
     font-weight:800;
     color:#14532d;
-}
-
-.heart-icon{
-    font-size:24px;
-    color:#ff6b6b;
 }
 
 .hero-content{
@@ -99,7 +93,15 @@ body{
     margin-bottom:15px;
 }
 
-input, input::-webkit-calendar-picker-indicator {
+.form-row.single {
+    flex-direction: column;
+}
+
+.form-row.single input {
+    width: 100%;
+}
+
+input {
     width:100%;
     padding:14px;
     border:1px solid #ddd;
@@ -107,11 +109,21 @@ input, input::-webkit-calendar-picker-indicator {
     font-size:14px;
     font-family:'Inter',sans-serif;
     color:#143d1e;
+    font-weight: 400;
 }
 
 input::placeholder {
     color:#999;
     font-weight:400;
+}
+
+input[type="date"] {
+    font-weight: 400;
+}
+
+input[type="date"]::before {
+    content: attr(placeholder);
+    font-weight: 400;
 }
 
 .form-row.full-width{
@@ -310,7 +322,6 @@ input::placeholder {
 <div class="container">
 
 <div class="header">
-<span class="heart-icon">❤️</span>
 <div class="logo">FJJT</div>
 </div>
 
@@ -335,14 +346,6 @@ Life insurance made simple, so you can focus on what matters most.
 <input type="text" placeholder="Last Name">
 </div>
 
-<div class="form-row full-width">
-<input type="email" placeholder="Email Address">
-</div>
-
-<div class="form-row full-width">
-<input type="date" placeholder="Date of Birth">
-</div>
-
 <div class="smoker-group">
 <label class="smoker-label">Smoker Status</label>
 <div class="smoker-options">
@@ -351,7 +354,15 @@ Life insurance made simple, so you can focus on what matters most.
 </div>
 </div>
 
-<div class="form-row full-width">
+<div class="form-row single">
+<input type="date" placeholder="Date of Birth">
+</div>
+
+<div class="form-row single">
+<input type="email" placeholder="Email Address">
+</div>
+
+<div class="form-row single">
 <input type="tel" placeholder="Mobile Number">
 </div>
 
@@ -366,7 +377,7 @@ Life insurance made simple, so you can focus on what matters most.
 </div>
 
 <div class="right">
-<img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=500&h=600&fit=crop" alt="Father and son on beach - Family protection">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=600&fit=crop" alt="Professional business team - Insurance company">
 </div>
 
 </div>
