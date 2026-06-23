@@ -1,517 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FJJT</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    color:#143d1e;
-    background:#ffffff;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.hero{
-    background:linear-gradient(135deg,#e8f6e7 0%,#d7f0d6 100%);
-    padding:60px 0 80px;
-    overflow:hidden;
-    position:relative;
-}
-
-.header{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    margin-bottom:60px;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:800;
-    color:#14532d;
-}
-
-.hero-content{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:60px;
-    flex-wrap:wrap;
-    position:relative;
-    z-index:2;
-}
-
-.left{
-    flex:1;
-    min-width:350px;
-}
-
-.left h1{
-    font-size:52px;
-    line-height:1.15;
-    font-weight:800;
-    color:#14532d;
-    margin-bottom:25px;
-}
-
-.left p{
-    font-size:18px;
-    color:#4a4a4a;
-    margin-bottom:40px;
-    line-height:1.7;
-}
-
-.quote-box{
-    background:#fff;
-    padding:40px;
-    border-radius:16px;
-    max-width:420px;
-    box-shadow:0 15px 40px rgba(0,0,0,.1);
-}
-
-.quote-box h2{
-    margin-bottom:25px;
-    color:#14532d;
-    font-size:20px;
-    font-weight:700;
-}
-
-.form-row{
-    display:flex;
-    gap:15px;
-    margin-bottom:18px;
-}
-
-.form-row.single {
-    flex-direction: column;
-}
-
-.form-row.single input {
-    width: 100%;
-}
-
-input {
-    width:100%;
-    padding:14px 16px;
-    border:1px solid #e0e0e0;
-    border-radius:8px;
-    font-size:14px;
-    font-family:'Inter',sans-serif;
-    color:#143d1e;
-    font-weight: 400;
-    background:#fff;
-}
-
-input::placeholder {
-    color:#999;
-    font-weight:400;
-}
-
-input[type="date"] {
-    font-weight: 400;
-}
-
-.smoker-group{
-    margin-bottom:18px;
-}
-
-.smoker-label{
-    font-size:13px;
-    font-weight:600;
-    color:#14532d;
-    margin-bottom:10px;
-    display:block;
-}
-
-.smoker-options{
-    display:flex;
-    gap:15px;
-}
-
-.smoker-btn{
-    flex:1;
-    padding:12px 16px;
-    border:2px solid #e0e0e0;
-    border-radius:8px;
-    background:#fff;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:600;
-    color:#4a4a4a;
-    transition:all 0.3s ease;
-    font-family:'Inter',sans-serif;
-}
-
-.smoker-btn:hover{
-    border-color:#28a745;
-    background:#f8fdf8;
-}
-
-.smoker-btn.active{
-    border-color:#28a745;
-    background:#28a745;
-    color:white;
-}
-
-.btn{
-    width:100%;
-    background:#ff6600;
-    color:white;
-    border:none;
-    border-radius:8px;
-    padding:16px;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    margin-top:8px;
-    transition:background 0.3s ease;
-}
-
-.btn:hover {
-    background:#e55a00;
-}
-
-.secure{
-    text-align:center;
-    margin-top:16px;
-    color:#666;
-    font-size:12px;
-}
-
-.right{
-    flex:1;
-    text-align:center;
-    min-width:280px;
-    position:relative;
-}
-
-.right::before {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-    width: 120%;
-    height: 150%;
-    background: radial-gradient(ellipse at center bottom, rgba(216, 240, 215, 0.4) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: -1;
-}
-
-.right img{
-    max-width:100%;
-    height:auto;
-    object-fit:contain;
-    object-position:center bottom;
-}
-
-.section{
-    padding:100px 0;
-}
-
-.section h2{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:70px;
-    color:#14532d;
-    font-weight:800;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:50px;
-}
-
-.feature{
-    text-align:center;
-}
-
-.icon{
-    width:90px;
-    height:90px;
-    border:2px solid #d4e7d2;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 25px;
-    font-size:36px;
-    line-height:1;
-    background:#f8fdf8;
-}
-
-.feature h3{
-    margin-bottom:15px;
-    font-size:22px;
-    font-weight:700;
-    color:#14532d;
-}
-
-.feature p{
-    color:#666;
-    line-height:1.8;
-    font-size:15px;
-}
-
-.help-section{
-    background:#f5faf5;
-}
-
-.help-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:40px;
-    text-align:center;
-}
-
-.help-item h3{
-    margin:15px 0;
-    font-size:18px;
-    font-weight:700;
-    color:#14532d;
-}
-
-.help-item p{
-    color:#666;
-    line-height:1.7;
-    font-size:14px;
-}
-
-.footer{
-    text-align:center;
-    padding:40px;
-    background:#14532d;
-    color:white;
-}
-
-@media(max-width:900px){
-
-    .left h1{
-        font-size:40px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FJJT | Life Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green-hero-1:#dff7e8;
+      --green-hero-2:#c8f1d7;
+      --green-hero-3:#b5ebca;
+      --primary:#136f3a;
+      --primary-dark:#0f5b30;
+      --text:#143021;
+      --muted:#4f6b5b;
+      --white:#fff;
+      --card:#ffffff;
+      --soft:#f5fbf7;
+      --accent:#ff7a00;
     }
 
-    .left p{
-        font-size:16px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.45;
     }
 
-    .features{
-        grid-template-columns:1fr;
-        gap:30px;
+    .container{
+      width:min(1150px,92%);
+      margin:auto;
     }
 
-    .help-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:30px;
+    /* NAV + HERO */
+    .hero-wrap{
+      background:linear-gradient(120deg,var(--green-hero-1),var(--green-hero-2) 55%,var(--green-hero-3));
+      padding-bottom:3.5rem;
     }
 
-    .hero-content{
-        flex-direction:column;
-        gap:40px;
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1.2rem 0;
     }
 
-    .right{
-        order:-1;
+    .brand{
+      font-size:1.7rem;
+      font-weight:800;
+      color:var(--primary-dark);
+      letter-spacing:.5px;
     }
 
-    .right::before {
-        width: 100%;
-    }
-}
-
-@media(max-width:600px){
-    .help-grid{
-        grid-template-columns:1fr;
+    .nav-links{
+      display:flex;
+      gap:1.2rem;
+      align-items:center;
+      font-weight:500;
+      color:var(--primary-dark);
     }
 
-    .quote-box{
-        padding:25px;
+    .nav-links a{
+      text-decoration:none;
+      color:inherit;
     }
-}
-</style>
+
+    .quote-btn{
+      background:var(--primary);
+      color:#fff !important;
+      padding:.65rem 1rem;
+      border-radius:.6rem;
+      font-weight:700;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2rem;
+      align-items:center;
+      padding:1.5rem 0 0;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem,5vw,4rem);
+      line-height:1.05;
+      margin:0 0 1rem;
+      color:#0f4f2e;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      color:var(--muted);
+      max-width:620px;
+      margin:0 0 1.5rem;
+    }
+
+    .hero-image{
+      width:100%;
+      min-height:460px;
+      border-radius:1rem;
+      background:
+        linear-gradient(145deg,#e7faef,#c7efd8);
+      border:1px solid #bce6cb;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#2d6e48;
+      font-weight:600;
+      text-align:center;
+      padding:1rem;
+    }
+
+    .form-card{
+      background:var(--card);
+      border-radius:1rem;
+      box-shadow:0 12px 30px rgba(20,48,33,.12);
+      width:min(430px,100%);
+      padding:1.2rem;
+      margin-top:1.2rem;
+    }
+
+    .form-card h3{
+      margin:.2rem 0 1rem;
+      font-size:1.75rem;
+      color:#17472c;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:.8rem;
+    }
+
+    input{
+      width:100%;
+      padding:.85rem .9rem;
+      border:1px solid #cae8d5;
+      border-radius:.65rem;
+      margin:0 0 .8rem;
+      font-size:1rem;
+      outline:none;
+    }
+
+    input:focus{
+      border-color:#82c7a0;
+      box-shadow:0 0 0 3px rgba(88,167,114,.15);
+    }
+
+    .cta{
+      width:100%;
+      border:none;
+      border-radius:.65rem;
+      background:var(--accent);
+      color:#fff;
+      font-weight:800;
+      font-size:1.1rem;
+      padding:.9rem 1rem;
+      cursor:pointer;
+      margin:.2rem 0 .65rem;
+    }
+
+    .tiny{
+      color:#658574;
+      font-size:.92rem;
+      text-align:center;
+    }
+
+    section{
+      padding:4rem 0;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.2rem;
+      margin:0 0 2rem;
+      color:#15492d;
+    }
+
+    .cards-3, .cards-4{
+      display:grid;
+      gap:1.1rem;
+    }
+
+    .cards-3{grid-template-columns:repeat(3,1fr);}
+    .cards-4{grid-template-columns:repeat(4,1fr);}
+
+    .card{
+      background:#fff;
+      border:1px solid #d8efdf;
+      border-radius:1rem;
+      padding:1.4rem;
+      text-align:center;
+    }
+
+    .icon{
+      width:58px;height:58px;
+      margin:0 auto .75rem;
+      border-radius:50%;
+      border:2px solid #bfe7cf;
+      display:grid;place-items:center;
+      color:#1f7d47;font-weight:700;
+    }
+
+    .card h4{
+      margin:.35rem 0 .45rem;
+      color:#1c5333;
+      font-size:1.25rem;
+    }
+
+    .card p{
+      margin:0;
+      color:#5a7666;
+    }
+
+    .soft-bg{background:var(--soft);}
+
+    .testimonial{
+      background:linear-gradient(135deg,#1d7d46,#17643a);
+      color:#fff;
+      text-align:center;
+      padding:4rem 1rem;
+    }
+
+    .testimonial blockquote{
+      margin:0 auto .6rem;
+      max-width:760px;
+      font-size:clamp(1.2rem,2.7vw,2rem);
+      font-weight:500;
+      line-height:1.35;
+    }
+
+    .testimonial cite{
+      font-style:normal;
+      opacity:.95;
+      font-weight:600;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      text-align:center;
+      gap:1rem;
+      padding:2.2rem 0 2.8rem;
+    }
+
+    .stat b{
+      display:block;
+      font-size:2.2rem;
+      color:#16512f;
+    }
+
+    .stat span{
+      color:#5a7a68;
+      font-weight:500;
+    }
+
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr;}
+      .hero-image{min-height:280px;}
+      .cards-3{grid-template-columns:1fr;}
+      .cards-4{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media (max-width:640px){
+      .nav-links a:not(.quote-btn){display:none;}
+      .grid-2{grid-template-columns:1fr;}
+      .cards-4{grid-template-columns:1fr;}
+      .stats{grid-template-columns:1fr 1fr;}
+      .section-title{font-size:1.7rem;}
+    }
+  </style>
 </head>
-
 <body>
 
-<section class="hero">
+  <header class="hero-wrap">
+    <div class="container">
+      <nav>
+        <div class="brand">FJJT</div>
+        <div class="nav-links">
+          <a href="#">Life Insurance</a>
+          <a href="#">About Us</a>
+          <a href="#">Resources</a>
+          <a class="quote-btn" href="#">Get a Quote</a>
+        </div>
+      </nav>
 
-<div class="container">
+      <div class="hero">
+        <div>
+          <h1>Because they depend on you.<br>We’re here for you.</h1>
+          <p>
+            Life insurance made simple, so you can focus on what matters most.
+          </p>
 
-<div class="header">
-<div class="logo">FJJT</div>
-</div>
+          <div class="form-card">
+            <h3>Get Your Free Quote</h3>
+            <form>
+              <div class="grid-2">
+                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="Last Name" />
+              </div>
+              <input type="email" placeholder="Email Address" />
+              <input type="text" placeholder="ZIP Code" />
+              <button class="cta" type="button">Get My Quote</button>
+              <div class="tiny">🔒 Safe. Secure. No obligation.</div>
+            </form>
+          </div>
+        </div>
 
-<div class="hero-content">
+        <div class="hero-image">
+          Replace this area with your family image<br>(same layout feel as reference)
+        </div>
+      </div>
+    </div>
+  </header>
 
-<div class="left">
+  <section>
+    <div class="container">
+      <h2 class="section-title">Why choose FJJT?</h2>
+      <div class="cards-3">
+        <article class="card">
+          <div class="icon">🏷</div>
+          <h4>Affordable Coverage</h4>
+          <p>Great protection at a price that fits your budget.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⏱</div>
+          <h4>Quick & Easy</h4>
+          <p>Get a quote in minutes and apply online in no time.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🛡</div>
+          <h4>Trusted Protection</h4>
+          <p>Backed by financially strong, top-rated companies.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<h1>
-Because they depend on you. We're here for you.
-</h1>
+  <section class="soft-bg">
+    <div class="container">
+      <h2 class="section-title">Life insurance can help</h2>
+      <div class="cards-4">
+        <article class="card">
+          <div class="icon">💼</div>
+          <h4>Replace income</h4>
+          <p>Help your family maintain their lifestyle.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🏠</div>
+          <h4>Pay off debt</h4>
+          <p>Cover mortgages, loans, and other expenses.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🎓</div>
+          <h4>Future goals</h4>
+          <p>Help fund education and life milestones.</p>
+        </article>
+        <article class="card">
+          <div class="icon">❤️</div>
+          <h4>Final expenses</h4>
+          <p>Ease the financial burden on loved ones.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<p>
-Life insurance made simple, so you can focus on what matters most.
-</p>
+  <section class="testimonial">
+    <blockquote>
+      “The process was so easy, and now I have peace of mind knowing my family is protected.”
+    </blockquote>
+    <cite>— Jessica M.</cite>
+  </section>
 
-<div class="quote-box">
-
-<h2>Get Your Free Quote</h2>
-
-<div class="form-row">
-<input type="text" placeholder="First Name">
-<input type="text" placeholder="Last Name">
-</div>
-
-<div class="smoker-group">
-<label class="smoker-label">Smoker Status</label>
-<div class="smoker-options">
-<button class="smoker-btn" onclick="selectSmoker(this, 'yes')">✓ Yes</button>
-<button class="smoker-btn" onclick="selectSmoker(this, 'no')">✕ No</button>
-</div>
-</div>
-
-<div class="form-row single">
-<input type="date" placeholder="Date of Birth">
-</div>
-
-<div class="form-row single">
-<input type="email" placeholder="Email Address">
-</div>
-
-<div class="form-row single">
-<input type="tel" placeholder="Mobile Number">
-</div>
-
-<button class="btn">Get My Quote</button>
-
-<div class="secure">
-🔒 Safe. Secure. No obligation.
-</div>
-
-</div>
-
-</div>
-
-<div class="right">
-<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=faces" alt="Happy family - Life insurance protection">
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<h2>Why choose FJJT?</h2>
-
-<div class="features">
-
-<div class="feature">
-<div class="icon">🏷️</div>
-<h3>Affordable Coverage</h3>
-<p>
-Great protection at a price that fits your budget.
-</p>
-</div>
-
-<div class="feature">
-<div class="icon">🕒</div>
-<h3>Quick & Easy</h3>
-<p>
-Get a quote in minutes and apply online in no time.
-</p>
-</div>
-
-<div class="feature">
-<div class="icon">🛡️</div>
-<h3>Trusted Protection</h3>
-<p>
-Backed by financially strong, top-rated companies.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section help-section">
-
-<div class="container">
-
-<h2>Life insurance can help</h2>
-
-<div class="help-grid">
-
-<div class="help-item">
-<div class="icon">💵</div>
-<h3>Replace income</h3>
-<p>
-Help your family maintain their lifestyle.
-</p>
-</div>
-
-<div class="help-item">
-<div class="icon">❤️</div>
-<h3>Pay off debt</h3>
-<p>
-Cover mortgages, loans and other expenses.
-</p>
-</div>
-
-<div class="help-item">
-<div class="icon">📄</div>
-<h3>Future goals</h3>
-<p>
-Help fund education and life milestones.
-</p>
-</div>
-
-<div class="help-item">
-<div class="icon">💰</div>
-<h3>Final expenses</h3>
-<p>
-Ease the financial burden on loved ones.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer class="footer">
-© 2025 FJJT. All Rights Reserved.
-</footer>
-
-<script>
-function selectSmoker(button, value) {
-  const parent = button.parentElement;
-  const buttons = parent.querySelectorAll('.smoker-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-}
-</script>
+  <section>
+    <div class="container stats">
+      <div class="stat"><b>20+</b><span>Years of Experience</span></div>
+      <div class="stat"><b>500K+</b><span>Policies Sold</span></div>
+      <div class="stat"><b>A+</b><span>AM Best Rating</span></div>
+      <div class="stat"><b>98%</b><span>Happy Customers</span></div>
+    </div>
+  </section>
 
 </body>
 </html>
