@@ -36,12 +36,18 @@ body{
     align-items:center;
     justify-content:flex-start;
     margin-bottom:40px;
+    gap:8px;
 }
 
 .logo{
-    font-size:42px;
+    font-size:28px;
     font-weight:800;
     color:#14532d;
+}
+
+.heart-icon{
+    font-size:24px;
+    color:#ff6b6b;
 }
 
 .hero-content{
@@ -58,30 +64,33 @@ body{
 }
 
 .left h1{
-    font-size:72px;
-    line-height:1.05;
-    font-weight:800;
+    font-size:48px;
+    line-height:1.2;
+    font-weight:700;
     color:#14532d;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .left p{
-    font-size:28px;
-    color:#355d3e;
+    font-size:18px;
+    color:#555;
     margin-bottom:35px;
+    line-height:1.6;
 }
 
 .quote-box{
     background:#fff;
     padding:30px;
-    border-radius:20px;
-    max-width:500px;
+    border-radius:15px;
+    max-width:450px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .quote-box h2{
     margin-bottom:20px;
     color:#14532d;
+    font-size:20px;
+    font-weight:700;
 }
 
 .form-row{
@@ -92,10 +101,10 @@ body{
 
 input, input::-webkit-calendar-picker-indicator {
     width:100%;
-    padding:16px;
+    padding:14px;
     border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
+    border-radius:8px;
+    font-size:14px;
     font-family:'Inter',sans-serif;
     color:#143d1e;
 }
@@ -114,10 +123,10 @@ input::placeholder {
 }
 
 .smoker-label{
-    font-size:14px;
+    font-size:13px;
     font-weight:600;
     color:#14532d;
-    margin-bottom:10px;
+    margin-bottom:8px;
     display:block;
 }
 
@@ -128,12 +137,12 @@ input::placeholder {
 
 .smoker-btn{
     flex:1;
-    padding:16px;
+    padding:12px;
     border:2px solid #ddd;
-    border-radius:10px;
+    border-radius:8px;
     background:#fff;
     cursor:pointer;
-    font-size:16px;
+    font-size:14px;
     font-weight:600;
     color:#355d3e;
     transition:all 0.3s ease;
@@ -153,21 +162,26 @@ input::placeholder {
 
 .btn{
     width:100%;
-    background:#28a745;
+    background:#ff6600;
     color:white;
     border:none;
-    border-radius:10px;
-    padding:18px;
-    font-size:22px;
+    border-radius:8px;
+    padding:16px;
+    font-size:16px;
     font-weight:700;
     cursor:pointer;
     margin-top:10px;
 }
 
+.btn:hover {
+    background:#e55a00;
+}
+
 .secure{
     text-align:center;
-    margin-top:20px;
+    margin-top:15px;
     color:#555;
+    font-size:13px;
 }
 
 .right{
@@ -179,19 +193,20 @@ input::placeholder {
 .right img{
     max-width:100%;
     height:auto;
-    border-radius:20px;
+    border-radius:15px;
     object-fit:cover;
 }
 
 .section{
-    padding:90px 0;
+    padding:80px 0;
 }
 
 .section h2{
     text-align:center;
-    font-size:52px;
+    font-size:42px;
     margin-bottom:60px;
     color:#14532d;
+    font-weight:700;
 }
 
 .features{
@@ -205,26 +220,28 @@ input::placeholder {
 }
 
 .icon{
-    width:90px;
-    height:90px;
+    width:80px;
+    height:80px;
     border:2px solid #cce7cb;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     margin:0 auto 20px;
-    font-size:36px;
+    font-size:32px;
     line-height:1;
 }
 
 .feature h3{
     margin-bottom:15px;
-    font-size:28px;
+    font-size:24px;
+    font-weight:700;
 }
 
 .feature p{
     color:#555;
     line-height:1.7;
+    font-size:15px;
 }
 
 .help-section{
@@ -240,12 +257,14 @@ input::placeholder {
 
 .help-item h3{
     margin:15px 0;
-    font-size:24px;
+    font-size:20px;
+    font-weight:700;
 }
 
 .help-item p{
     color:#555;
     line-height:1.7;
+    font-size:14px;
 }
 
 .footer{
@@ -258,11 +277,11 @@ input::placeholder {
 @media(max-width:900px){
 
     .left h1{
-        font-size:50px;
+        font-size:36px;
     }
 
     .left p{
-        font-size:22px;
+        font-size:16px;
     }
 
     .features{
@@ -291,6 +310,7 @@ input::placeholder {
 <div class="container">
 
 <div class="header">
+<span class="heart-icon">❤️</span>
 <div class="logo">FJJT</div>
 </div>
 
@@ -299,9 +319,7 @@ input::placeholder {
 <div class="left">
 
 <h1>
-Because they<br>
-depend on you.<br>
-We're here for you.
+Because they depend on you. We're here for you.
 </h1>
 
 <p>
@@ -318,6 +336,10 @@ Life insurance made simple, so you can focus on what matters most.
 </div>
 
 <div class="form-row full-width">
+<input type="email" placeholder="Email Address">
+</div>
+
+<div class="form-row full-width">
 <input type="date" placeholder="Date of Birth">
 </div>
 
@@ -331,10 +353,6 @@ Life insurance made simple, so you can focus on what matters most.
 
 <div class="form-row full-width">
 <input type="tel" placeholder="Mobile Number">
-</div>
-
-<div class="form-row full-width">
-<input type="email" placeholder="Email Address">
 </div>
 
 <button class="btn">Get My Quote</button>
