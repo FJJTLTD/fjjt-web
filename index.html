@@ -127,9 +127,8 @@ input{
     min-width:300px;
 }
 
-.right img{
+.right svg{
     max-width:100%;
-    border-radius:20px;
     height:auto;
 }
 
@@ -164,6 +163,7 @@ input{
     justify-content:center;
     margin:0 auto 20px;
     font-size:36px;
+    line-height:1;
 }
 
 .feature h3{
@@ -266,13 +266,17 @@ Life insurance made simple, so you can focus on what matters most.
 <input type="text" placeholder="Last Name">
 </div>
 
+<div class="form-row full-width">
 <input type="date" placeholder="Date of Birth">
+</div>
 
 <div class="form-row full-width">
 <input type="tel" placeholder="Mobile Number">
 </div>
 
+<div class="form-row full-width">
 <input type="email" placeholder="Email Address">
+</div>
 
 <button class="btn">Get My Quote</button>
 
@@ -285,7 +289,37 @@ Life insurance made simple, so you can focus on what matters most.
 </div>
 
 <div class="right">
-<img src="https://images.unsplash.com/photo-1552684528-1f2170e6999c?w=500&h=500&fit=crop" alt="Family protection - Life insurance">
+<svg width="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="#e8f6e7" stroke="#28a745" stroke-width="2"/>
+  
+  <!-- Family illustration -->
+  <!-- Adult head -->
+  <circle cx="150" cy="120" r="25" fill="#d4a574"/>
+  <!-- Adult body -->
+  <rect x="135" y="150" width="30" height="50" fill="#28a745" rx="5"/>
+  <!-- Adult arms -->
+  <rect x="110" y="160" width="40" height="12" fill="#d4a574" rx="6"/>
+  <!-- Adult legs -->
+  <rect x="140" y="200" width="10" height="40" fill="#4a4a4a" rx="5"/>
+  <rect x="155" y="200" width="10" height="40" fill="#4a4a4a" rx="5"/>
+  
+  <!-- Child head -->
+  <circle cx="250" cy="140" r="20" fill="#d4a574"/>
+  <!-- Child body -->
+  <rect x="238" y="165" width="24" height="40" fill="#3d82f6" rx="5"/>
+  <!-- Child arms -->
+  <rect x="218" y="172" width="35" height="10" fill="#d4a574" rx="5"/>
+  <!-- Child legs -->
+  <rect x="243" y="205" width="8" height="35" fill="#4a4a4a" rx="4"/>
+  <rect x="256" y="205" width="8" height="35" fill="#4a4a4a" rx="4"/>
+  
+  <!-- Protection shield behind family -->
+  <path d="M 200 80 L 280 120 L 280 200 Q 200 260 200 260 Q 120 200 120 120 L 200 80" fill="none" stroke="#28a745" stroke-width="3" opacity="0.6"/>
+  
+  <!-- Heart symbol -->
+  <path d="M 200 240 m -15 0 a 15 15 0 0 1 30 0 a 20 20 0 0 1 -30 20 a 20 20 0 0 1 -30 -20 a 15 15 0 0 1 30 0" fill="#ff6b6b" opacity="0.7"/>
+</svg>
 </div>
 
 </div>
