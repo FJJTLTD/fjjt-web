@@ -566,12 +566,14 @@
       </a>
 
       <!-- Navigation links -->
-      <ul class="nav-links" role="list">
-        <li><a href="#">Life Insurance &#9660;</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="#quote" class="btn-nav">Get a Quote</a></li>
-      </ul>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#" aria-haspopup="true" aria-expanded="false">Life Insurance <span aria-hidden="true">&#9660;</span></a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#quote" class="btn-nav">Get a Quote</a></li>
+        </ul>
+      </nav>
 
     </div>
   </header>
@@ -603,10 +605,10 @@
               </div>
               <!-- Row 3: ZIP Code -->
               <div class="form-row full">
-                <input type="text" placeholder="ZIP Code" inputmode="numeric" maxlength="10" autocomplete="postal-code" />
+                <input type="text" placeholder="ZIP Code" inputmode="numeric" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" autocomplete="postal-code" />
               </div>
               <!-- CTA button -->
-              <button type="submit" class="btn-quote">Get My Quote</button>
+              <button type="button" class="btn-quote">Get My Quote</button>
               <!-- Security note -->
               <div class="secure-note">
                 <!-- Lock icon -->
