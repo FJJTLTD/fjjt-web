@@ -8,9 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* =============================================
-       CSS CUSTOM PROPERTIES — Design token palette
-       ============================================= */
     :root {
       --dark-green:   #1a3a2a;
       --mid-green:    #2d5a3d;
@@ -22,9 +19,6 @@
       --gray-text:    #5a6a5a;
     }
 
-    /* =============================================
-       RESET & BASE
-       ============================================= */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -63,7 +57,6 @@
       gap: 16px;
     }
 
-    /* Brand / Logo */
     .brand {
       display: inline-flex;
       align-items: center;
@@ -81,7 +74,6 @@
       flex-shrink: 0;
     }
 
-    /* Nav links */
     .nav-links {
       display: flex;
       align-items: center;
@@ -102,7 +94,6 @@
       color: var(--btn-green);
     }
 
-    /* "Get a Quote" CTA button in nav */
     .btn-nav {
       background: var(--dark-green);
       color: var(--white) !important;
@@ -135,7 +126,6 @@
       align-items: stretch;
     }
 
-    /* Left column */
     .hero-left {
       padding-bottom: 64px;
       display: flex;
@@ -159,7 +149,6 @@
       line-height: 1.6;
     }
 
-    /* Quote form card */
     .quote-card {
       background: var(--white);
       border-radius: 16px;
@@ -268,7 +257,6 @@
       object-position: center top;
       display: block;
       border-radius: 16px 16px 0 0;
-      /* Blend edges into the green background */
       -webkit-mask-image:
         linear-gradient(to bottom, black 55%, transparent 100%),
         linear-gradient(to left, black 65%, transparent 100%);
@@ -280,7 +268,7 @@
     }
 
     /* =============================================
-       3. "WHY CHOOSE FJJT?" SECTION
+       3. WHY CHOOSE FJJT?
        ============================================= */
     .why {
       background: var(--white);
@@ -342,7 +330,7 @@
     }
 
     /* =============================================
-       4. "LIFE INSURANCE CAN HELP" SECTION
+       4. LIFE INSURANCE CAN HELP
        ============================================= */
     .help {
       background: var(--light-green);
@@ -382,7 +370,7 @@
     }
 
     /* =============================================
-       5. TESTIMONIAL SECTION
+       5. TESTIMONIAL
        ============================================= */
     .testimonial {
       background: var(--dark-green);
@@ -466,112 +454,47 @@
     }
 
     /* =============================================
-       RESPONSIVE MEDIA QUERIES
+       RESPONSIVE
        ============================================= */
-
-    /* Tablet */
     @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-right {
-        order: -1;
-      }
-
-      .hero-img {
-        min-height: 300px;
-        border-radius: 16px;
-      }
-
-      .hero-left {
-        padding-bottom: 48px;
-      }
-
-      .cards-3 {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-
-      .cards-4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { order: -1; }
+      .hero-img { min-height: 300px; border-radius: 16px; }
+      .hero-left { padding-bottom: 48px; }
+      .cards-3 { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .cards-4 { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* Mobile */
     @media (max-width: 640px) {
-      /* Nav: hide text links, keep brand + CTA */
-      .nav-links li:not(:last-child) {
-        display: none;
-      }
-
-      .hero-left h1 {
-        font-size: 34px;
-      }
-
-      .hero-sub {
-        font-size: 15px;
-      }
-
-      .quote-card {
-        padding: 20px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        font-size: 26px;
-      }
-
-      .help .section-title {
-        font-size: 22px;
-      }
-
-      .cards-4 {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonial blockquote {
-        font-size: 17px;
-      }
-
-      .stat b {
-        font-size: 32px;
-      }
+      .nav-links li:not(:last-child) { display: none; }
+      .hero-left h1 { font-size: 34px; }
+      .hero-sub { font-size: 15px; }
+      .quote-card { padding: 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .section-title { font-size: 26px; }
+      .help .section-title { font-size: 22px; }
+      .cards-4 { grid-template-columns: 1fr; }
+      .testimonial blockquote { font-size: 17px; }
+      .stat b { font-size: 32px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ============================================
-       1. NAVIGATION BAR
-       ============================================ -->
+  <!-- 1. NAVIGATION BAR -->
   <header class="navbar">
     <div class="container">
-
-      <!-- Brand logo -->
       <a class="brand" href="#" aria-label="FJJT home">
-        <!-- Shield with family silhouette SVG icon -->
         <svg viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M20 2C25 6 31 7.5 38 7.5V20C38 31 30 37.5 20 42C10 37.5 2 31 2 20V7.5C9 7.5 15 6 20 2Z" fill="#1a3a2a" stroke="#1a3a2a" stroke-width="1.5" stroke-linejoin="round"/>
-          <!-- Adult figure -->
           <circle cx="17" cy="17" r="3" fill="white"/>
           <path d="M11 30v-5a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <!-- Child figure -->
           <circle cx="27" cy="19" r="2.2" fill="white"/>
           <path d="M23.5 30v-4a3.5 3.5 0 0 1 3.5-3.5h0a3.5 3.5 0 0 1 3.5 3.5v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
         FJJT
       </a>
-
-      <!-- Navigation links -->
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="#" aria-haspopup="true" aria-expanded="false">Life Insurance <span aria-hidden="true">&#9660;</span></a></li>
@@ -580,44 +503,32 @@
           <li><a href="#quote" class="btn-nav">Get a Quote</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <!-- ============================================
-       2. HERO SECTION
-       ============================================ -->
+  <!-- 2. HERO SECTION -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
 
-        <!-- Left: Headline + form -->
         <div class="hero-left">
           <h1>Because they depend on you. We&#8217;re here for you.</h1>
           <p class="hero-sub">Life insurance made simple, so you can focus on what matters most.</p>
-
-          <!-- Quote form card -->
           <div class="quote-card" id="quote">
             <h2>Get Your Free Quote</h2>
             <form>
-              <!-- Row 1: First Name | Last Name -->
               <div class="form-row">
                 <input type="text" placeholder="First Name" autocomplete="given-name" />
                 <input type="text" placeholder="Last Name" autocomplete="family-name" />
               </div>
-              <!-- Row 2: Email Address -->
               <div class="form-row full">
                 <input type="email" placeholder="Email Address" autocomplete="email" />
               </div>
-              <!-- Row 3: ZIP Code -->
               <div class="form-row full">
-                <input type="text" placeholder="ZIP Code" inputmode="numeric" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" autocomplete="postal-code" />
+                <input type="text" placeholder="ZIP Code" inputmode="numeric" maxlength="10" autocomplete="postal-code" />
               </div>
-              <!-- CTA button -->
               <button type="button" class="btn-quote">Get My Quote</button>
-              <!-- Security note -->
               <div class="secure-note">
-                <!-- Lock icon -->
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="5" y="11" width="14" height="10" rx="2"/>
                   <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
@@ -628,36 +539,27 @@
           </div>
         </div>
 
-        <!-- Right: Hero photo — place your photo file named hero.jpg in the same folder as index.html -->
+        <!-- Hero photo -->
         <div class="hero-right">
           <img
-            src="hero.jpg"
+            src="hero.png.webp"
             alt="Father joyfully lifting his young child up in the air at home"
             class="hero-img"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
-          <!-- Fallback shown only if hero.jpg is missing -->
-          <div style="display:none; width:100%; min-height:520px; background:#cfe0cf; border-radius:16px 16px 0 0; align-items:center; justify-content:center; font-size:16px; font-weight:600; color:#4a7a5a; border:2px dashed #a0c0a0; text-align:center; padding:24px;">
-            Upload <strong>hero.jpg</strong> to the root of your repo to display the hero photo here.
-          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ============================================
-       3. WHY CHOOSE FJJT? SECTION
-       ============================================ -->
+  <!-- 3. WHY CHOOSE FJJT? -->
   <section class="why">
     <div class="container">
       <h2 class="section-title">Why choose FJJT?</h2>
       <div class="cards-3">
 
-        <!-- Card 1: Affordable Coverage -->
         <article class="feature-card">
           <div class="icon-circle">
-            <!-- Price tag SVG icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2H7a1 1 0 0 0-.7.3L2.3 6.3A1 1 0 0 0 2 7v5a1 1 0 0 0 .3.7l8 8a1 1 0 0 0 1.4 0l8-8a1 1 0 0 0 0-1.4l-8-8A1 1 0 0 0 12 2z"/>
               <circle cx="7.5" cy="7.5" r="1.5" fill="currentColor" stroke="none"/>
@@ -667,10 +569,8 @@
           <p>Great protection at a price that fits your budget.</p>
         </article>
 
-        <!-- Card 2: Quick & Easy -->
         <article class="feature-card">
           <div class="icon-circle">
-            <!-- Clock SVG icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="9"/>
               <path d="M12 7v5l3.5 2"/>
@@ -680,10 +580,8 @@
           <p>Get a quote in minutes and apply online in no time.</p>
         </article>
 
-        <!-- Card 3: Trusted Protection -->
         <article class="feature-card">
           <div class="icon-circle">
-            <!-- Shield checkmark SVG icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 3l8 3v6c0 5-3.6 8.2-8 9.5C7.6 20.2 4 17 4 12V6z"/>
               <path d="m9 12 2 2 4-4"/>
@@ -697,32 +595,25 @@
     </div>
   </section>
 
-  <!-- ============================================
-       4. LIFE INSURANCE CAN HELP SECTION
-       ============================================ -->
+  <!-- 4. LIFE INSURANCE CAN HELP -->
   <section class="help">
     <div class="container">
       <h2 class="section-title">Life insurance can help</h2>
       <div class="cards-4">
 
-        <!-- Card 1: Replace income -->
         <article class="help-card">
           <div class="icon-circle">
-            <!-- Piggy bank / money icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M19 11a7 7 0 0 0-7-7 7 7 0 0 0-7 7c0 2.5 1.3 4.7 3.3 6L8 19h8l-.3-2c2-1.3 3.3-3.5 3.3-6z"/>
-              <path d="M21 11h1"/>
-              <path d="M10 19h4"/>
+              <path d="M21 11h1"/><path d="M10 19h4"/>
             </svg>
           </div>
           <h4>Replace income</h4>
           <p>Help your family maintain their lifestyle.</p>
         </article>
 
-        <!-- Card 2: Pay off debt -->
         <article class="help-card">
           <div class="icon-circle">
-            <!-- Heart with dollar / debt icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 21C12 21 4 15.5 4 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.5 12 21 12 21z"/>
               <path d="M12 9v6m-1.5-4.5h3a1.5 1.5 0 0 1 0 3H12"/>
@@ -732,10 +623,8 @@
           <p>Cover mortgages, loans, and other expenses.</p>
         </article>
 
-        <!-- Card 3: Future goals -->
         <article class="help-card">
           <div class="icon-circle">
-            <!-- Graduation / tag icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/>
               <path d="M6 12v5c0 2 2.7 3 6 3s6-1 6-3v-5"/>
@@ -745,10 +634,8 @@
           <p>Help fund education and life milestones.</p>
         </article>
 
-        <!-- Card 4: Final expenses -->
         <article class="help-card">
           <div class="icon-circle">
-            <!-- Cloud / plus icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M17.5 19H6a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.3-1A3.5 3.5 0 1 1 17.5 19z"/>
               <path d="M12 12v4m-2-2h4"/>
@@ -762,16 +649,13 @@
     </div>
   </section>
 
-  <!-- ============================================
-       5. TESTIMONIAL SECTION
-       ============================================ -->
+  <!-- 5. TESTIMONIAL -->
   <section class="testimonial">
     <div class="quote-mark" aria-hidden="true">&ldquo;</div>
     <blockquote>
       &#8220;The process was so easy, and now I have peace of mind knowing my family is protected.&#8221;
     </blockquote>
     <cite>&#8212; Jessica M.</cite>
-    <!-- Pagination dots -->
     <div class="dots" role="presentation">
       <span class="dot"></span>
       <span class="dot active"></span>
@@ -779,28 +663,14 @@
     </div>
   </section>
 
-  <!-- ============================================
-       6. STATS BAR
-       ============================================ -->
+  <!-- 6. STATS BAR -->
   <section class="stats-bar">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat">
-          <b>20+</b>
-          <span>Years of Experience</span>
-        </div>
-        <div class="stat">
-          <b>500K+</b>
-          <span>Policies Sold</span>
-        </div>
-        <div class="stat">
-          <b>A+</b>
-          <span>AM Best Rating</span>
-        </div>
-        <div class="stat">
-          <b>98%</b>
-          <span>Happy Customers</span>
-        </div>
+        <div class="stat"><b>20+</b><span>Years of Experience</span></div>
+        <div class="stat"><b>500K+</b><span>Policies Sold</span></div>
+        <div class="stat"><b>A+</b><span>AM Best Rating</span></div>
+        <div class="stat"><b>98%</b><span>Happy Customers</span></div>
       </div>
     </div>
   </section>
