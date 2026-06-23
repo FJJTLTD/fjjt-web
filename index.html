@@ -6,22 +6,26 @@
   <title>FJJT | Life Insurance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES — Design token palette
+       ============================================= */
     :root {
-      --green-bg-1: #edf7eb;
-      --green-bg-2: #dcefd8;
-      --green-bg-3: #cde6c9;
-      --dark-green: #0f4d2c;
-      --mid-green: #2e6948;
-      --btn-green: #1f9a26;
-      --btn-green-dark: #18801e;
-      --section-lite: #f4f9f2;
-      --white: #ffffff;
-      --border: #d5e4d2;
+      --dark-green:   #1a3a2a;
+      --mid-green:    #2d5a3d;
+      --light-green:  #e8f0e8;
+      --white:        #ffffff;
+      --btn-green:    #2d6a3f;
+      --text-dark:    #1a2a1a;
+      --border:       #c8d9c8;
+      --gray-text:    #5a6a5a;
     }
 
-    * {
+    /* =============================================
+       RESET & BASE
+       ============================================= */
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -29,248 +33,318 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--dark-green);
-      background: #fff;
-      line-height: 1.4;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.5;
+      font-size: 16px;
     }
 
     .container {
-      width: min(1200px, 92%);
+      width: min(1160px, 92%);
       margin: 0 auto;
     }
 
-    .hero {
-      background: linear-gradient(120deg, var(--green-bg-1) 0%, var(--green-bg-2) 52%, var(--green-bg-3) 100%);
-      padding-bottom: 0;
-      overflow: hidden;
-      position: relative;
+    /* =============================================
+       1. NAVIGATION BAR
+       ============================================= */
+    .navbar {
+      background: var(--white);
+      border-bottom: 1px solid #e5ede5;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    nav {
-      height: 96px;
+    .navbar .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 68px;
       gap: 16px;
     }
 
+    /* Brand / Logo */
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-size: 54px;
+      gap: 10px;
+      font-size: 22px;
       font-weight: 800;
       color: var(--dark-green);
-      letter-spacing: 0.2px;
       text-decoration: none;
-    }
-
-    .brand svg {
-      width: 58px;
-      height: 58px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2.2;
       flex-shrink: 0;
     }
 
-    .quote-top {
+    .brand svg {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dark);
       text-decoration: none;
-      background: #0d6a2e;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 32px;
-      line-height: 1;
-      box-shadow: 0 6px 16px rgba(13, 106, 46, 0.25);
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--btn-green);
+    }
+
+    /* "Get a Quote" CTA button in nav */
+    .btn-nav {
+      background: var(--dark-green);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+
+    .btn-nav:hover {
+      background: var(--mid-green) !important;
+      color: var(--white) !important;
+      transform: translateY(-1px);
+    }
+
+    /* =============================================
+       2. HERO SECTION
+       ============================================= */
+    .hero {
+      background: var(--light-green);
+      padding: 64px 0 0;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
-      gap: 8px;
-      align-items: end;
-      min-height: 860px;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: stretch;
     }
 
-    .left {
-      padding: 20px 0 48px;
-      max-width: 690px;
+    /* Left column */
+    .hero-left {
+      padding-bottom: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
 
-    h1 {
-      font-size: clamp(62px, 6.35vw, 106px);
-      line-height: 0.98;
+    .hero-left h1 {
+      font-size: 48px;
+      line-height: 1.1;
       font-weight: 800;
-      letter-spacing: -1.7px;
-      margin-bottom: 24px;
-      color: #0d5b34;
+      color: var(--dark-green);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
     }
 
-    .sub {
-      font-size: clamp(32px, 2.3vw, 41px);
-      color: #2e5f44;
-      max-width: 640px;
-      margin-bottom: 28px;
-      line-height: 1.34;
-      font-weight: 500;
-      letter-spacing: -0.3px;
+    .hero-sub {
+      font-size: 16px;
+      color: var(--mid-green);
+      margin-bottom: 32px;
+      line-height: 1.6;
     }
 
+    /* Quote form card */
     .quote-card {
-      width: min(560px, 100%);
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 22px 46px rgba(14, 58, 34, 0.16);
-      border: 1px solid #dfeadf;
-      padding: 30px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(26, 58, 42, 0.15);
+      padding: 28px;
+      width: 100%;
     }
 
     .quote-card h2 {
-      font-size: 54px;
-      line-height: 1.02;
-      letter-spacing: -1px;
-      font-weight: 800;
-      color: #0f4d2c;
-      margin-bottom: 18px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--dark-green);
+      margin-bottom: 20px;
     }
 
-    .row {
+    .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 12px;
     }
 
-    .row.single {
+    .form-row.full {
       grid-template-columns: 1fr;
     }
 
-    input {
+    .form-row input {
       width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 14px;
-      font-size: 36px;
-      color: #264b37;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 15px;
+      color: var(--text-dark);
       font-family: inherit;
       outline: none;
-      background: #fff;
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    input::placeholder {
-      color: #90a590;
+    .form-row input::placeholder {
+      color: #8fa88f;
     }
 
-    input:focus {
-      border-color: #7aae86;
-      box-shadow: 0 0 0 4px rgba(72, 132, 87, 0.14);
+    .form-row input:focus {
+      border-color: var(--btn-green);
+      box-shadow: 0 0 0 3px rgba(45, 106, 63, 0.12);
     }
 
-    .btn {
+    .btn-quote {
       width: 100%;
-      background: linear-gradient(180deg, #27a72f 0%, #1e9826 100%);
-      color: #fff;
+      background: var(--btn-green);
+      color: var(--white);
       border: none;
-      border-radius: 10px;
-      padding: 18px 14px;
-      font-size: 42px;
-      line-height: 1;
-      font-weight: 800;
+      border-radius: 8px;
+      padding: 15px 14px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: inherit;
       cursor: pointer;
-      margin-top: 8px;
+      margin-top: 4px;
+      transition: background 0.2s, transform 0.15s;
     }
 
-    .btn:hover {
-      background: linear-gradient(180deg, #249d2c 0%, #18801e 100%);
+    .btn-quote:hover {
+      background: var(--dark-green);
+      transform: translateY(-1px);
     }
 
-    .secure {
-      margin-top: 18px;
+    .secure-note {
+      margin-top: 12px;
       text-align: center;
-      font-size: 38px;
-      color: #37644a;
-      font-weight: 500;
-      letter-spacing: -0.2px;
+      font-size: 13px;
+      color: var(--mid-green);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
 
-    .right {
+    .secure-note svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* Right column — hero image placeholder */
+    .hero-right {
       display: flex;
       align-items: flex-end;
-      justify-content: flex-end;
-      height: 100%;
-      position: relative;
+      justify-content: center;
     }
 
-    .right img {
+    .hero-img-placeholder {
       width: 100%;
-      max-width: 650px;
-      object-fit: contain;
-      object-position: bottom center;
-      display: block;
-      filter: saturate(1.03) contrast(1.03);
+      height: 100%;
+      min-height: 460px;
+      background: #cfe0cf;
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #4a7a5a;
+      border: 2px dashed #a0c0a0;
     }
 
-    section {
-      padding: 78px 0;
+    /* =============================================
+       3. "WHY CHOOSE FJJT?" SECTION
+       ============================================= */
+    .why {
+      background: var(--white);
+      padding: 72px 0;
     }
 
-    .title {
-      font-size: clamp(50px, 4vw, 74px);
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
       text-align: center;
-      color: #0f4d2c;
-      margin-bottom: 54px;
-      font-weight: 800;
-      letter-spacing: -0.8px;
+      color: var(--dark-green);
+      margin-bottom: 48px;
+      letter-spacing: -0.3px;
     }
 
     .cards-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 34px;
+      gap: 32px;
       text-align: center;
     }
 
+    .feature-card {
+      padding: 8px 16px;
+    }
+
     .icon-circle {
-      width: 126px;
-      height: 126px;
-      border: 2px solid #cfe2cc;
+      width: 80px;
+      height: 80px;
+      background: var(--light-green);
       border-radius: 50%;
-      margin: 0 auto 18px;
+      margin: 0 auto 20px;
       display: grid;
       place-items: center;
-      color: #1e6d43;
+      color: var(--dark-green);
     }
 
     .icon-circle svg {
-      width: 58px;
-      height: 58px;
+      width: 36px;
+      height: 36px;
       stroke: currentColor;
       fill: none;
-      stroke-width: 1.9;
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .cards-3 h3 {
-      font-size: 49px;
-      line-height: 1.08;
-      margin-bottom: 10px;
-      color: #0f4d2c;
+    .feature-card h3 {
+      font-size: 18px;
       font-weight: 700;
-      letter-spacing: -0.7px;
+      color: var(--dark-green);
+      margin-bottom: 10px;
     }
 
-    .cards-3 p {
-      font-size: 38px;
-      line-height: 1.36;
-      color: #355e46;
-      font-weight: 500;
+    .feature-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--gray-text);
     }
 
+    /* =============================================
+       4. "LIFE INSURANCE CAN HELP" SECTION
+       ============================================= */
     .help {
-      background: var(--section-lite);
+      background: var(--light-green);
+      padding: 72px 0;
+    }
+
+    .help .section-title {
+      font-size: 28px;
     }
 
     .cards-4 {
@@ -280,286 +354,443 @@
       text-align: center;
     }
 
-    .cards-4 h4 {
-      margin: 14px 0 8px;
-      font-size: 42px;
-      line-height: 1.12;
-      color: #0f4d2c;
+    .help-card {
+      padding: 8px 12px;
+    }
+
+    .help-card .icon-circle {
+      background: #d4e6d4;
+    }
+
+    .help-card h4 {
+      font-size: 16px;
       font-weight: 700;
-      letter-spacing: -0.6px;
+      color: var(--dark-green);
+      margin: 12px 0 8px;
     }
 
-    .cards-4 p {
-      font-size: 33px;
-      line-height: 1.35;
-      color: #395f49;
-      font-weight: 500;
+    .help-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--mid-green);
     }
 
+    /* =============================================
+       5. TESTIMONIAL SECTION
+       ============================================= */
     .testimonial {
-      background: linear-gradient(120deg, #066229 0%, #0b7a35 45%, #036333 100%);
-      color: #fff;
+      background: var(--dark-green);
+      color: var(--white);
       text-align: center;
-      padding: 76px 20px;
+      padding: 72px 20px;
+    }
+
+    .testimonial .quote-mark {
+      font-size: 72px;
+      line-height: 1;
+      color: #4a9a6a;
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
     }
 
     .testimonial blockquote {
-      margin: 0 auto 12px;
-      font-size: clamp(38px, 3vw, 57px);
-      line-height: 1.3;
-      max-width: 1100px;
-      font-weight: 500;
-      letter-spacing: -0.5px;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 0 auto 16px;
+      font-weight: 400;
     }
 
     .testimonial cite {
       font-style: normal;
-      font-size: 38px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 600;
       display: block;
-      margin-top: 8px;
+      opacity: 0.85;
+      margin-bottom: 24px;
     }
 
     .dots {
-      margin-top: 14px;
-      font-size: 24px;
-      letter-spacing: 8px;
-      opacity: 0.92;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
-    .stats {
-      padding: 40px 0 56px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .dot.active {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    /* =============================================
+       6. STATS BAR
+       ============================================= */
+    .stats-bar {
+      background: var(--white);
+      padding: 56px 0;
+    }
+
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      gap: 16px;
       text-align: center;
     }
 
     .stat b {
       display: block;
-      font-size: 56px;
-      color: #0f4d2c;
-      line-height: 1.1;
-      margin-bottom: 6px;
+      font-size: 40px;
       font-weight: 800;
+      color: var(--dark-green);
+      line-height: 1.15;
+      margin-bottom: 6px;
     }
 
     .stat span {
-      font-size: 32px;
-      color: #476954;
-      font-weight: 500;
+      font-size: 14px;
+      color: var(--gray-text);
+      font-weight: 600;
     }
 
-    @media (max-width: 1320px) {
-      .brand { font-size: 42px; }
-      .brand svg { width: 48px; height: 48px; }
-      .quote-top { font-size: 24px; }
-      h1 { font-size: 72px; }
-      .sub { font-size: 28px; }
-      .quote-card h2 { font-size: 44px; }
-      input { font-size: 24px; }
-      .btn { font-size: 32px; }
-      .secure { font-size: 26px; }
-      .cards-3 h3 { font-size: 36px; }
-      .cards-3 p { font-size: 26px; }
-      .cards-4 h4 { font-size: 32px; }
-      .cards-4 p { font-size: 24px; }
-      .stat b { font-size: 44px; }
-      .stat span { font-size: 22px; }
-      .testimonial cite { font-size: 30px; }
-    }
+    /* =============================================
+       RESPONSIVE MEDIA QUERIES
+       ============================================= */
 
-    @media (max-width: 1060px) {
+    /* Tablet */
+    @media (max-width: 960px) {
       .hero-grid {
         grid-template-columns: 1fr;
-        min-height: auto;
       }
-      .right {
-        justify-content: center;
+
+      .hero-right {
         order: -1;
       }
-      .right img {
-        max-width: 560px;
+
+      .hero-img-placeholder {
+        min-height: 280px;
+        border-radius: 16px;
       }
-      .cards-3 { grid-template-columns: 1fr; }
-      .cards-4 { grid-template-columns: repeat(2, 1fr); }
-      .stats { grid-template-columns: repeat(2, 1fr); }
+
+      .hero-left {
+        padding-bottom: 48px;
+      }
+
+      .cards-3 {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .cards-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width: 680px) {
-      nav { height: 82px; }
-      .brand { font-size: 34px; }
-      .brand svg { width: 40px; height: 40px; }
-      .quote-top { font-size: 18px; padding: 12px 16px; }
-      h1 { font-size: 48px; }
-      .sub { font-size: 22px; }
-      .quote-card h2 { font-size: 34px; }
-      .row { grid-template-columns: 1fr; }
-      input { font-size: 18px; }
-      .btn { font-size: 28px; }
-      .secure { font-size: 20px; }
-      .title { font-size: 38px; }
-      .cards-4, .stats { grid-template-columns: 1fr; }
-      .cards-3 h3, .cards-4 h4 { font-size: 30px; }
-      .cards-3 p, .cards-4 p, .stat span { font-size: 20px; }
-      .testimonial blockquote { font-size: 30px; }
-      .testimonial cite { font-size: 24px; }
+    /* Mobile */
+    @media (max-width: 640px) {
+      /* Nav: hide text links, keep brand + CTA */
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+
+      .hero-left h1 {
+        font-size: 34px;
+      }
+
+      .hero-sub {
+        font-size: 15px;
+      }
+
+      .quote-card {
+        padding: 20px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .help .section-title {
+        font-size: 22px;
+      }
+
+      .cards-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial blockquote {
+        font-size: 17px;
+      }
+
+      .stat b {
+        font-size: 32px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
+
+  <!-- ============================================
+       1. NAVIGATION BAR
+       ============================================ -->
+  <header class="navbar">
     <div class="container">
-      <nav>
-        <a class="brand" href="#" aria-label="FJJT home">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2.2c2.2 2.1 4.7 3.2 8.2 3.5v6.5c0 5.4-3.1 8.3-8.2 9.8-5.1-1.5-8.2-4.4-8.2-9.8V5.7c3.5-.3 6-1.4 8.2-3.5z"/>
-            <circle cx="9" cy="10" r="1.2"/>
-            <circle cx="12" cy="9" r="1.3"/>
-            <circle cx="15" cy="10" r="1.2"/>
-            <path d="M7.8 14.8v-2.1c0-.8.6-1.4 1.4-1.4h.2"/>
-            <path d="M11.1 14.8v-2.2c0-.9.7-1.6 1.6-1.6h.1c.9 0 1.6.7 1.6 1.6v2.2"/>
-            <path d="M14.7 14.8v-2.1c0-.8.6-1.4 1.4-1.4h.2"/>
-          </svg>
-          <span>FJJT</span>
-        </a>
 
-        <a class="quote-top" href="#">Get a Quote</a>
-      </nav>
+      <!-- Brand logo -->
+      <a class="brand" href="#" aria-label="FJJT home">
+        <!-- Shield with family silhouette SVG icon -->
+        <svg viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 2C25 6 31 7.5 38 7.5V20C38 31 30 37.5 20 42C10 37.5 2 31 2 20V7.5C9 7.5 15 6 20 2Z" fill="#1a3a2a" stroke="#1a3a2a" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Adult figure -->
+          <circle cx="17" cy="17" r="3" fill="white"/>
+          <path d="M11 30v-5a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <!-- Child figure -->
+          <circle cx="27" cy="19" r="2.2" fill="white"/>
+          <path d="M23.5 30v-4a3.5 3.5 0 0 1 3.5-3.5h0a3.5 3.5 0 0 1 3.5 3.5v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        FJJT
+      </a>
 
+      <!-- Navigation links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#">Life Insurance &#9660;</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#quote" class="btn-nav">Get a Quote</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+  <!-- ============================================
+       2. HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
       <div class="hero-grid">
-        <div class="left">
-          <h1>Because they<br />depend on you.<br />We’re here for you.</h1>
-          <p class="sub">Life insurance made simple, so you can focus on what matters most.</p>
 
-          <div class="quote-card">
+        <!-- Left: Headline + form -->
+        <div class="hero-left">
+          <h1>Because they depend on you. We're here for you.</h1>
+          <p class="hero-sub">Life insurance made simple, so you can focus on what matters most.</p>
+
+          <!-- Quote form card -->
+          <div class="quote-card" id="quote">
             <h2>Get Your Free Quote</h2>
             <form>
-              <div class="row">
-                <input type="text" placeholder="First Name" />
-                <input type="text" placeholder="Last Name" />
+              <!-- Row 1: First Name | Last Name -->
+              <div class="form-row">
+                <input type="text" placeholder="First Name" autocomplete="given-name" />
+                <input type="text" placeholder="Last Name" autocomplete="family-name" />
               </div>
-              <div class="row single">
-                <input type="email" placeholder="Email Address" />
+              <!-- Row 2: Email Address -->
+              <div class="form-row full">
+                <input type="email" placeholder="Email Address" autocomplete="email" />
               </div>
-              <div class="row single">
-                <input type="text" placeholder="Post Code" />
+              <!-- Row 3: ZIP Code -->
+              <div class="form-row full">
+                <input type="text" placeholder="ZIP Code" inputmode="numeric" maxlength="10" autocomplete="postal-code" />
               </div>
-              <button type="button" class="btn">Get My Quote</button>
-              <div class="secure">🔒 Safe. Secure. No obligation.</div>
+              <!-- CTA button -->
+              <button type="submit" class="btn-quote">Get My Quote</button>
+              <!-- Security note -->
+              <div class="secure-note">
+                <!-- Lock icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="11" width="14" height="10" rx="2"/>
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                </svg>
+                Safe. Secure. No obligation.
+              </div>
             </form>
           </div>
         </div>
 
-        <div class="right">
-          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=980&q=80" alt="Father with son on shoulders" />
+        <!-- Right: Hero image placeholder -->
+        <div class="hero-right">
+          <!-- Replace this div with your hero image: <img src="your-photo.jpg" alt="Family photo"> -->
+          <div class="hero-img-placeholder" aria-label="Hero image placeholder">
+            [ Your Photo Here ]
+          </div>
         </div>
+
       </div>
     </div>
-  </header>
+  </section>
 
-  <section>
+  <!-- ============================================
+       3. WHY CHOOSE FJJT? SECTION
+       ============================================ -->
+  <section class="why">
     <div class="container">
-      <h2 class="title">Why choose FJJT?</h2>
+      <h2 class="section-title">Why choose FJJT?</h2>
       <div class="cards-3">
-        <article>
+
+        <!-- Card 1: Affordable Coverage -->
+        <article class="feature-card">
           <div class="icon-circle">
+            <!-- Price tag SVG icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 7.5 12 3l8 4.5-8 13z"/>
-              <circle cx="9" cy="8.5" r="1" fill="currentColor" stroke="none"/>
+              <path d="M12 2H7a1 1 0 0 0-.7.3L2.3 6.3A1 1 0 0 0 2 7v5a1 1 0 0 0 .3.7l8 8a1 1 0 0 0 1.4 0l8-8a1 1 0 0 0 0-1.4l-8-8A1 1 0 0 0 12 2z"/>
+              <circle cx="7.5" cy="7.5" r="1.5" fill="currentColor" stroke="none"/>
             </svg>
           </div>
           <h3>Affordable Coverage</h3>
           <p>Great protection at a price that fits your budget.</p>
         </article>
-        <article>
+
+        <!-- Card 2: Quick & Easy -->
+        <article class="feature-card">
           <div class="icon-circle">
+            <!-- Clock SVG icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="8"/>
-              <path d="M12 7v5l3 2"/>
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3.5 2"/>
             </svg>
           </div>
           <h3>Quick &amp; Easy</h3>
           <p>Get a quote in minutes and apply online in no time.</p>
         </article>
-        <article>
+
+        <!-- Card 3: Trusted Protection -->
+        <article class="feature-card">
           <div class="icon-circle">
+            <!-- Shield checkmark SVG icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3l7 3v6c0 4.1-2.4 6.6-7 8-4.6-1.4-7-3.9-7-8V6z"/>
-              <path d="m9.3 12.2 1.8 1.8 3.6-3.7"/>
+              <path d="M12 3l8 3v6c0 5-3.6 8.2-8 9.5C7.6 20.2 4 17 4 12V6z"/>
+              <path d="m9 12 2 2 4-4"/>
             </svg>
           </div>
           <h3>Trusted Protection</h3>
           <p>Backed by financially strong, top-rated companies.</p>
         </article>
+
       </div>
     </div>
   </section>
 
+  <!-- ============================================
+       4. LIFE INSURANCE CAN HELP SECTION
+       ============================================ -->
   <section class="help">
     <div class="container">
-      <h2 class="title">Life insurance can help</h2>
+      <h2 class="section-title">Life insurance can help</h2>
       <div class="cards-4">
-        <article>
+
+        <!-- Card 1: Replace income -->
+        <article class="help-card">
           <div class="icon-circle">
+            <!-- Piggy bank / money icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 13h6l2-3 2 3h6"/>
-              <path d="M4 17h16"/>
-              <circle cx="6.5" cy="18.5" r="1.4"/>
+              <path d="M19 11a7 7 0 0 0-7-7 7 7 0 0 0-7 7c0 2.5 1.3 4.7 3.3 6L8 19h8l-.3-2c2-1.3 3.3-3.5 3.3-6z"/>
+              <path d="M12 7v2m0 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" fill="currentColor" stroke="none"/>
+              <path d="M21 11h1"/>
+              <path d="M10 19h4"/>
             </svg>
           </div>
           <h4>Replace income</h4>
           <p>Help your family maintain their lifestyle.</p>
         </article>
-        <article>
+
+        <!-- Card 2: Pay off debt -->
+        <article class="help-card">
           <div class="icon-circle">
+            <!-- Heart with dollar / debt icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 21s7-4.4 7-10V6l-7-3-7 3v5c0 5.6 7 10 7 10z"/>
-              <path d="M9.2 12.2h5.6"/>
+              <path d="M12 21C12 21 4 15.5 4 9.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.5 12 21 12 21z"/>
+              <path d="M12 9v6m-1.5-4.5h3a1.5 1.5 0 0 1 0 3H12"/>
             </svg>
           </div>
           <h4>Pay off debt</h4>
           <p>Cover mortgages, loans, and other expenses.</p>
         </article>
-        <article>
+
+        <!-- Card 3: Future goals -->
+        <article class="help-card">
           <div class="icon-circle">
+            <!-- Graduation / tag icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 3h8l4 4v14H7z"/>
-              <path d="M15 3v4h4"/>
-              <path d="M10 14h6"/>
+              <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/>
+              <path d="M6 12v5c0 2 2.7 3 6 3s6-1 6-3v-5"/>
             </svg>
           </div>
           <h4>Future goals</h4>
           <p>Help fund education and life milestones.</p>
         </article>
-        <article>
+
+        <!-- Card 4: Final expenses -->
+        <article class="help-card">
           <div class="icon-circle">
+            <!-- Cloud / plus icon -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 14a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.6 1.7A3.8 3.8 0 1 1 18 15H6z"/>
-              <path d="M14 15.5a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6z"/>
-              <path d="M14 16.4v2.8"/>
+              <path d="M17.5 19H6a4 4 0 0 1 0-8 5.5 5.5 0 0 1 10.3-1A3.5 3.5 0 1 1 17.5 19z"/>
+              <path d="M12 12v4m-2-2h4"/>
             </svg>
           </div>
           <h4>Final expenses</h4>
           <p>Ease the financial burden on loved ones.</p>
         </article>
+
       </div>
     </div>
   </section>
 
+  <!-- ============================================
+       5. TESTIMONIAL SECTION
+       ============================================ -->
   <section class="testimonial">
-    <blockquote>“The process was so easy, and now I have peace of mind knowing my family is protected.”</blockquote>
+    <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+    <blockquote>
+      "The process was so easy, and now I have peace of mind knowing my family is protected."
+    </blockquote>
     <cite>— Jessica M.</cite>
-    <div class="dots">• • •</div>
-  </section>
-
-  <section>
-    <div class="container stats">
-      <div class="stat"><b>20+</b><span>Years of Experience</span></div>
-      <div class="stat"><b>500K+</b><span>Policies Sold</span></div>
-      <div class="stat"><b>A+</b><span>AM Best Rating</span></div>
-      <div class="stat"><b>98%</b><span>Happy Customers</span></div>
+    <!-- Pagination dots -->
+    <div class="dots" role="presentation">
+      <span class="dot"></span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
     </div>
   </section>
+
+  <!-- ============================================
+       6. STATS BAR
+       ============================================ -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <b>20+</b>
+          <span>Years of Experience</span>
+        </div>
+        <div class="stat">
+          <b>500K+</b>
+          <span>Policies Sold</span>
+        </div>
+        <div class="stat">
+          <b>A+</b>
+          <span>AM Best Rating</span>
+        </div>
+        <div class="stat">
+          <b>98%</b>
+          <span>Happy Customers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
